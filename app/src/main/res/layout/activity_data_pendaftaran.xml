@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_gradient"
+    tools:context=".DataPendaftaranActivity">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <android.support.v7.widget.CardView
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:padding="@dimen/activity_horizontal_margin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:text="DATA PENDAFTARAN"
+                    android:layout_centerInParent="true"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:padding="@dimen/activity_horizontal_margin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <Button
+                    android:layout_gravity="end"
+                    android:id="@+id/btnEdit"
+                    android:text="Ubah Data"
+                    android:textStyle="bold"
+                    android:textSize="10sp"
+                    android:textColor="@color/colorWhite"
+                    android:background="@drawable/background_gradient"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:hint="NISN"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/nisn"
+                        android:text="nisn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:hint="Nama Lengkap"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/nama"
+                        android:hint="NAMA LENGKAP"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:hint="TEMPAT LAHIR"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/tmpLahir"
+                        android:hint="TEMPAT LAHIR"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:hint="TEMPAT LAHIR"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/tglLahir"
+                        android:hint="TEMPAT LAHIR (yyyy-mm-dd)"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:hint="Jenis Kelamin"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/jk"
+                        android:hint="Laki Laki"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:hint="TELEPON"
+                        android:inputType="phone"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/telepon"
+                        android:hint="TELEPON"
+                        android:inputType="phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:hint="ALAMAT"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/alamat"
+                        android:hint="ALAMAT"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:hint="SEKOLAH ASAL"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/sekolahasal"
+                        android:hint="SEKOLAH ASAL"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:hint="TAHUN LULUS"
+                        android:inputType="number"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/tahunLulus"
+                        android:hint="TAHUN LULUS"
+                        android:inputType="number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+
+
+                <TextView
+                    android:text="NILAI UN"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/nmtk"
+                        android:hint="MTK"
+                        android:inputType="number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/nbindo"
+                        android:hint="B. Indo"
+                        android:inputType="number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/nbing"
+                        android:hint="B.Ing"
+                        android:inputType="number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/avg"
+                        android:hint="Rata-Rata"
+                        android:inputType="number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:hint="NAMA AYAH"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/nmayah"
+                        android:hint="NAMA AYAH"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:hint="NAMA IBU"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/nmibu"
+                        android:hint="NAMA IBU"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:hint="JURUSAN"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/jurusan"
+                        android:hint="JURUSAN"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+</ScrollView>
