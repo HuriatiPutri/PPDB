@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.ta.pendaftaransiswa.apihelper.BaseApiService;
+import com.ta.pendaftaransiswa.apihelper.RetrofitClient;
 import com.ta.pendaftaransiswa.apihelper.UtilsApi;
 
 import org.json.JSONException;
@@ -84,8 +85,10 @@ public class LoginActivity extends AppCompatActivity {
                                         String nama = jsonRESULTS.getJSONObject("user").getString("nama");
                                         String nisn = jsonRESULTS.getJSONObject("user").getString("nisn");
                                         Intent intent = new Intent(mContext, HomeActivity.class);
-                                        intent.putExtra("result_nama", nama);
-                                        intent.putExtra("result_nisn", nisn);
+                                        RetrofitClient.NAMA = nama;
+                                        RetrofitClient.NISN = nisn;
+//                                        intent.putExtra("result_nama", nama);
+//                                        intent.putExtra("result_nisn", nisn);
                                         startActivity(intent);
                                     } else {
                                         // Jika login gagal

@@ -1,10 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="@dimen/activity_horizontal_margin"
+    android:orientation="vertical"
     tools:context=".HomeActivity">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/imgProfile"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/round"
+            android:src="@drawable/ic_person_black_24dp"
+            />
+        <TextView
+            android:id="@+id/txtNama"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
@@ -20,6 +41,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="30dp"
+            android:textColor="@android:color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <LinearLayout
@@ -72,7 +94,7 @@
                 android:layout_height="wrap_content">
                 <ImageView
                     android:layout_centerHorizontal="true"
-                    android:id="@+id/imgProfile"
+                    android:id="@+id/imgCalon"
                     android:src="@mipmap/resume"
                     android:layout_width="100dp"
                     android:layout_height="100dp" />
@@ -80,7 +102,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/imgProfile"
+                    android:layout_below="@id/imgCalon"
                     android:layout_centerVertical="true"
                     android:layout_marginTop="0dp"
                     android:text="Calon Peserta      Didik"
@@ -91,4 +113,6 @@
         </LinearLayout>
     </android.support.v7.widget.CardView>
 
-</RelativeLayout>
+
+
+</LinearLayout>

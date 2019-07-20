@@ -14,6 +14,7 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.ta.pendaftaransiswa.apihelper.BaseApiService;
+import com.ta.pendaftaransiswa.apihelper.RetrofitClient;
 import com.ta.pendaftaransiswa.apihelper.UtilsApi;
 
 import org.json.JSONException;
@@ -79,8 +80,8 @@ public class PendaftaranActivity extends AppCompatActivity {
 
         });
 
-        nisn.setText(HomeActivity.NISN);
-        nama.setText(HomeActivity.NAMA);
+        nisn.setText(RetrofitClient.NISN);
+        nama.setText(RetrofitClient.NAMA);
     }
 
     private void requestPendaftaran() {
@@ -117,7 +118,7 @@ public class PendaftaranActivity extends AppCompatActivity {
                                 JSONObject jsonRESULTS = new JSONObject(response.body().string());
                                 if (jsonRESULTS.getString("error").equals("false")){
                                     Toast.makeText(mContext, "BERHASIL DAFTAR", Toast.LENGTH_SHORT).show();
-                                    startActivity(new Intent(mContext, HomeActivity.class));
+                                    startActivity(new Intent(mContext, DataPendaftaranActivity.class));
                                     finish();
                                 } else {
                                     String error_message = jsonRESULTS.getString("error_msg");

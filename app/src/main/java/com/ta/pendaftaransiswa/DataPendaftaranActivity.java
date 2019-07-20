@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ta.pendaftaransiswa.apihelper.BaseApiService;
+import com.ta.pendaftaransiswa.apihelper.RetrofitClient;
 import com.ta.pendaftaransiswa.apihelper.UtilsApi;
 import com.ta.pendaftaransiswa.model.PesertaModel;
 
@@ -44,7 +45,7 @@ public class DataPendaftaranActivity extends AppCompatActivity {
 //        loading = ProgressDialog.show(mContext, null, "Harap Tunggu...", true, false);
 
         BaseApiService service = mApiService;
-        Call<PesertaModel> call = service.getData(HomeActivity.NISN);
+        Call<PesertaModel> call = service.getData(RetrofitClient.NISN);
         call.enqueue(new Callback<PesertaModel>() {
             @Override
             public void onResponse(Call<PesertaModel> call, Response<PesertaModel> response) {

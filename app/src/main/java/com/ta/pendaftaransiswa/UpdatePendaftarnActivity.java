@@ -133,7 +133,7 @@ public class UpdatePendaftarnActivity extends AppCompatActivity {
                     public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                         if (response.isSuccessful()){
                             Log.i("debug", "onResponse: BERHASIL");
-//                               Toast.makeText(mContext, "BERHASIL DIUBAH", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(mContext, "BERHASIL DIUBAH", Toast.LENGTH_SHORT).show();
                                     startActivity(new Intent(mContext, DataPendaftaranActivity.class));
                                     finish();
                         } else {

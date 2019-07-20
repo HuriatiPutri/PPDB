@@ -10,19 +10,19 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.ta.pendaftaransiswa.apihelper.BaseApiService;
+import com.ta.pendaftaransiswa.apihelper.RetrofitClient;
 import com.ta.pendaftaransiswa.apihelper.UtilsApi;
 
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
 
     RelativeLayout daftar, calonPeserta, pengumuman;
-
+    TextView txtNama;
     Context mContext;
     BaseApiService mApiService;
 
     ProgressDialog loading;
 
-    public static  String NAMA;
-    public static String NISN;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,14 +34,16 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         initComponent();
 
         Intent intent = getIntent();
-        NAMA = intent.getStringExtra("result_nama");
-        NISN = intent.getStringExtra("result_nisn");
+//        RetrofitClient.NAMA = intent.getStringExtra("result_nama");
+//        RetrofitClient.NISN = intent.getStringExtra("result_nisn");
     }
 
     private void initComponent() {
         daftar = findViewById(R.id.daftar);
         calonPeserta = findViewById(R.id.calonPeserta);
+        txtNama = findViewById(R.id.txtNama);
 
+        txtNama.setText(RetrofitClient.NAMA);
         calonPeserta.setOnClickListener(this);
         daftar.setOnClickListener(this);
     }
