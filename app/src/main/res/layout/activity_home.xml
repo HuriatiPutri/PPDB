@@ -3,55 +3,101 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/activity_horizontal_margin"
+    android:background="@color/colorbg"
     android:orientation="vertical"
     tools:context=".HomeActivity">
 
-    <LinearLayout
-        android:orientation="horizontal"
+    <TextView
+        android:text="Menu Utama"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="@android:color/black"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-        <ImageView
-            android:id="@+id/imgProfile"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_margin="5dp"
-            android:background="@drawable/round"
-            android:src="@drawable/ic_person_black_24dp"
-            />
-        <TextView
-            android:id="@+id/txtNama"
-            android:layout_gravity="center"
-            android:textStyle="bold"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
-
+        android:layout_height="wrap_content" />
     <android.support.v7.widget.CardView
+        android:layout_margin="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-        <TextView
-            android:text="Menu Utama"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="30dp"
-            android:textColor="@android:color/black"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+
         <LinearLayout
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginBottom="10dp"
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:id="@+id/profile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:id="@+id/imgCalon"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_centerHorizontal="true"
+                        android:src="@mipmap/resume" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/imgCalon"
+                        android:layout_centerVertical="true"
+                        android:textSize="12sp"
+                        android:layout_marginTop="0dp"
+                        android:text="Profile Sekolah"
+                        android:textAlignment="center" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/informasi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:id="@+id/imgInformasi"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_centerHorizontal="true"
+                        android:src="@mipmap/info" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/imgInformasi"
+                        android:layout_centerVertical="true"
+                        android:layout_marginTop="0dp"
+                        android:textSize="12sp"
+                        android:text="Informasi Pendaftaran"
+                        android:textAlignment="center" />
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
             <RelativeLayout
                 android:id="@+id/daftar"
                 android:layout_marginEnd="10dp"
@@ -64,13 +110,14 @@
                 android:layout_height="100dp" />
                 <TextView
                     android:layout_below="@id/imgDaftar"
-                    android:text="Daftar"
+                    android:text="Pendaftaran"
                     android:layout_centerInParent="true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
             </RelativeLayout>
 
             <RelativeLayout
+                android:id="@+id/cekHasil"
                 android:layout_marginEnd="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
@@ -81,38 +128,23 @@
                     android:layout_height="100dp" />
                 <TextView
                     android:layout_below="@id/imgPengumuman"
-                    android:text="Pengumuman"
+                    android:text="Cek Hasil"
                     android:layout_centerInParent="true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
             </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/calonPeserta"
-                android:layout_marginEnd="10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                <ImageView
-                    android:layout_centerHorizontal="true"
-                    android:id="@+id/imgCalon"
-                    android:src="@mipmap/resume"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/imgCalon"
-                    android:layout_centerVertical="true"
-                    android:layout_marginTop="0dp"
-                    android:text="Calon Peserta      Didik"
-                    android:textAlignment="center" />
-            </RelativeLayout>
-
+            </LinearLayout>
         </LinearLayout>
         </LinearLayout>
     </android.support.v7.widget.CardView>
-
-
-
+    <Button
+        android:id="@+id/logout"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/colorWhite"
+        android:textStyle="bold"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:text="Log Out"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 </LinearLayout>

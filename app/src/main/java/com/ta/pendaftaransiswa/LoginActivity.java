@@ -35,13 +35,20 @@ public class LoginActivity extends AppCompatActivity {
     Button btnLogin;
     Button btnRegister;
     ProgressDialog loading;
+    SharedPrefManager sharedPrefManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        sharedPrefManager = new SharedPrefManager(this);
 
+        if (sharedPrefManager.getSPSudahLogin()){
+            startActivity(new Intent(LoginActivity.this, HomeActivity.class)
+                    .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK));
+            finish();
+        }
         mContext = this;
         mApiService = UtilsApi.getAPIService(); // meng-init yang ada di package apihelper
         initComponents();
@@ -84,12 +91,17 @@ public class LoginActivity extends AppCompatActivity {
                                         Toast.makeText(mContext, "BERHASIL LOGIN", Toast.LENGTH_SHORT).show();
                                         String nama = jsonRESULTS.getJSONObject("user").getString("nama");
                                         String nisn = jsonRESULTS.getJSONObject("user").getString("nisn");
-                                        Intent intent = new Intent(mContext, HomeActivity.class);
-                                        RetrofitClient.NAMA = nama;
-                                        RetrofitClient.NISN = nisn;
-//                                        intent.putExtra("result_nama", nama);
+                                        Intent intent = new Intent(mContext, HomeActivity.class)
+                                                .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);;
+
+                                        intent.putExtra("result_nama", nama);
 //                                        intent.putExtra("result_nisn", nisn);
+                                       // startActivity(intent);
+                                        sharedPrefManager.saveSPBoolean(SharedPrefManager.SP_SUDAH_LOGIN, true);
+                                        sharedPrefManager.saveSPString(SharedPrefManager.SP_NAMA, nama);
+                                        sharedPrefManager.saveSPString(SharedPrefManager.SP_NISN, nisn);
                                         startActivity(intent);
+                                        finish();
                                     } else {
                                         // Jika login gagal
                                         String error_message = jsonRESULTS.getString("error_msg");

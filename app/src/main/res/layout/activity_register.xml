@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_gradient"
+    android:background="@mipmap/bg"
     tools:context=".RegisterActivity">
 
     <LinearLayout
@@ -13,14 +13,30 @@
         android:padding="16dp"
         android:orientation="vertical">
 
+        <ImageView
+            android:layout_gravity="center_horizontal"
+            android:src="@mipmap/tut"
+            android:layout_width="100dp"
+            android:layout_height="100dp" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textSize="24sp"
+            android:textSize="26sp"
             android:textColor="#fff"
+            android:textStyle="bold"
             android:fontFamily="sans-serif"
-            android:text="REGISTER"/>
+            android:text="PPDB ONLIINE"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="20sp"
+            android:textColor="#fff"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif"
+            android:text="@string/smk_negeri_1_palembayan"/>
 
         <EditText
             android:id="@+id/etNisn"
@@ -77,6 +93,7 @@
             android:layout_height="wrap_content"
             android:textColor="#FFF"
             android:text="REGISTER"
+            android:textStyle="bold"
             android:background="@drawable/bg_rectangle_button"/>
     </LinearLayout>
 </RelativeLayout>

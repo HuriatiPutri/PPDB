@@ -61,7 +61,7 @@ public class CalonPesertaActivity extends AppCompatActivity {
                         PesertaModel data = new PesertaModel(
                                 response.body().get(i).getNisn(),
                                 response.body().get(i).getNama(),
-                                response.body().get(i).getSekolah_asal()
+                                response.body().get(i).getAsal_sekolah()
                         );
                         pesertaModels.add(data);
                     }

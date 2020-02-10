@@ -22,7 +22,7 @@ import retrofit2.Response;
 
 public class DataPendaftaranActivity extends AppCompatActivity {
 
-    TextView nisn, nama, tahunLulus,tmpLahir, tglLahir, alamat, telepon, sekolahAsal, mtk, bindo, bing, avg, nmAyah, nmIbu, jurusan, jk;
+    TextView noPendaftaran, nisn, nama, tahunLulus,tmpLahir, tglLahir, alamat, telepon, sekolahAsal, mtk, bindo, bing, avg, nmAyah, nmIbu, jurusan, jk;
     Button btnEdit;
     Context mContext;
     BaseApiService mApiService;
@@ -44,13 +44,12 @@ public class DataPendaftaranActivity extends AppCompatActivity {
     private void requestDataPeserta() {
 //        loading = ProgressDialog.show(mContext, null, "Harap Tunggu...", true, false);
 
-        BaseApiService service = mApiService;
-        Call<PesertaModel> call = service.getData(RetrofitClient.NISN);
-        call.enqueue(new Callback<PesertaModel>() {
+       mApiService.getDetailPendaftaran(RetrofitClient.NISN).enqueue(new Callback<PesertaModel>() {
             @Override
             public void onResponse(Call<PesertaModel> call, Response<PesertaModel> response) {
-                if (response.code() == 200) {
-                        nisn.setText(response.body().getNisn());
+                if (response.body().getError().equals("false")) {
+                    noPendaftaran.setText(response.body().getNo_pendaftaran());
+                    nisn.setText(response.body().getNisn());
                         nama.setText(response.body().getNama());
                         tmpLahir.setText(response.body().getTmp_lahir());
                         tglLahir.setText(response.body().getTgl_lahir());
@@ -60,7 +59,7 @@ public class DataPendaftaranActivity extends AppCompatActivity {
                         telepon.setText(response.body().getTelepon());
                         nmIbu.setText(response.body().getNm_ibu());
                         tahunLulus.setText(response.body().getTahun_lulus());
-                        sekolahAsal.setText(response.body().getsekolah_asal());
+                        sekolahAsal.setText(response.body().getAsal_sekolah());
                         mtk.setText(response.body().getN_mtk() + "");
                         bindo.setText(response.body().getN_bindo() + "");
                         bing.setText(response.body().getN_bing() +"");
@@ -85,6 +84,7 @@ public class DataPendaftaranActivity extends AppCompatActivity {
     }
 
     private void initComponent() {
+        noPendaftaran = findViewById(R.id.noPendaftaran);
         nisn = findViewById(R.id.nisn);
         nama = findViewById(R.id.nama);
         tmpLahir = findViewById(R.id.tmpLahir);

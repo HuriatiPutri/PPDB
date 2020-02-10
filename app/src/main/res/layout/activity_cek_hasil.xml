@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".CekHasilActivity">
+    <android.support.v7.widget.CardView
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="No Pendaftaran"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <EditText
+                android:id="@+id/noPendaftaran"
+                android:inputType="text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="Nama Pendaftar"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <EditText
+                android:id="@+id/namaPendaftar"
+                android:inputType="text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <Button
+                android:id="@+id/btnHasil"
+                android:layout_marginTop="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#FFF"
+                android:text="Cek Hasil"
+                android:textStyle="bold"
+                android:background="@color/colorPrimary"/>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardHasil"
+        android:visibility="gone"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_marginLeft="10dp"
+            android:orientation="vertical"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <TextView
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:textStyle="bold"
+            android:text="Pengumuman Hasil Seleksi"
+            android:textColor="@android:color/black"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:text="No Pendaftaran"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/txtNo"
+                    android:text="190001"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:text="NISN"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/txtNisn"
+                    android:text="12039488"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:text="Nama"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/txtNama"
+                    android:text="Putri"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:text="Program Studi"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/txtProgram"
+                    android:textStyle="bold"
+                    android:text="Multimedia "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:text="Status"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/txtStatus"
+                    android:text="Menunggu Konfirmasi"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorWhite"
+                    android:background="@drawable/bgmenunggu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:text="Keterangan"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/txtKeternagan"
+                    android:text="Semangat !!!"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>

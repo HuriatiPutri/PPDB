@@ -1,5 +1,6 @@
 package com.ta.pendaftaransiswa;
 
+import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -8,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -20,6 +22,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Locale;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -37,6 +42,9 @@ public class UpdatePendaftarnActivity extends AppCompatActivity {
     Context mContext;
     BaseApiService mApiService;
 
+    private DatePickerDialog datePickerDialog;
+    private SimpleDateFormat dateFormatter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +52,9 @@ public class UpdatePendaftarnActivity extends AppCompatActivity {
         setContentView(R.layout.activity_pendaftaran);
         mContext = this;
         mApiService = UtilsApi.getAPIService();
+
+        dateFormatter = new SimpleDateFormat("yyyy-MM-dd", Locale.US);
+
         initComponent();
 
     }
@@ -69,7 +80,16 @@ public class UpdatePendaftarnActivity extends AppCompatActivity {
 //        rbLk = findViewById(R.id.rbLk);
 //        rbPr = findViewById(R.id.rbPr);
         btnDaftar = findViewById(R.id.BtnDaftar);
-
+        avg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int nmtk = Integer.parseInt(mtk.getText().toString());
+                int nbind = Integer.parseInt(bindo.getText().toString());
+                int nbing = Integer.parseInt(bing.getText().toString());
+                double rata = (nmtk+nbind+nbing)/3;
+                avg.setText(String.valueOf(rata));
+            }
+        });
         btnDaftar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -79,8 +99,51 @@ public class UpdatePendaftarnActivity extends AppCompatActivity {
 
         });
 
+        tglLahir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showCalender();
+            }
+        });
         getDataPendataran();
 
+    }
+    void showCalender() {
+        /**
+         * Calendar untuk mendapatkan tanggal sekarang
+         */
+        Calendar newCalendar = Calendar.getInstance();
+
+        /**
+         * Initiate DatePicker dialog
+         */
+        datePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
+
+            @Override
+            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+
+                /**
+                 * Method ini dipanggil saat kita selesai memilih tanggal di DatePicker
+                 */
+
+                /**
+                 * Set Calendar untuk menampung tanggal yang dipilih
+                 */
+                Calendar newDate = Calendar.getInstance();
+                newDate.set(year, monthOfYear, dayOfMonth);
+
+                /**
+                 * Update TextView dengan tanggal yang kita pilih
+                 */
+                tglLahir.setText(dateFormatter.format(newDate.getTime()));
+            }
+
+        },newCalendar.get(Calendar.YEAR), newCalendar.get(Calendar.MONTH), newCalendar.get(Calendar.DAY_OF_MONTH));
+
+        /**
+         * Tampilkan DatePicker dialog
+         */
+        datePickerDialog.show();
     }
 
     private void getDataPendataran() {

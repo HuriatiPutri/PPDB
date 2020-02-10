@@ -4,4 +4,9 @@
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="title_activity_main2">Main2Activity</string>
+    <string name="smk_negeri_1_palembayan">SMK Negeri 1 Palembayan</string>
+    <string name="teknik_audio_video_elektonika">Teknik Audio Video (Elektonika)</string>
+    <string name="teknik_otomotif_kendaraan_ringan">Teknik Otomotif (Kendaraan Ringan)</string>
+    <string name="teknik_otomotif_sepeda_motor">Teknik Otomotif (Sepeda Motor)</string>
+    <string name="multimedia_komputer">Multimedia (Komputer)</string>
 </resources>

@@ -36,7 +36,7 @@ public class PesertaAdapter extends RecyclerView.Adapter<PesertaAdapter.PesertaH
     public void onBindViewHolder(@NonNull PesertaHolder holder, int position) {
         holder.nama.setText(list.get(position).getNisn());
         holder.nisn.setText(list.get(position).getNama());
-        holder.asal.setText(list.get(position).getSekolah_asal());
+        holder.asal.setText(list.get(position).getAsal_sekolah());
 
     }
 

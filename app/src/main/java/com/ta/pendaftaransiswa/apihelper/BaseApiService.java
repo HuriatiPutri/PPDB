@@ -1,6 +1,8 @@
 package com.ta.pendaftaransiswa.apihelper;
 
+import com.ta.pendaftaransiswa.model.HasilModel;
 import com.ta.pendaftaransiswa.model.PesertaModel;
+import com.ta.pendaftaransiswa.model.ProfileModel;
 import com.ta.pendaftaransiswa.model.UserModel;
 
 import java.util.List;
@@ -11,6 +13,7 @@ import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface BaseApiService {
@@ -67,6 +70,12 @@ public interface BaseApiService {
     @GET("semuapeserta")
     Call<List<PesertaModel>> requestPeserta();
 
-    @GET("getPendaftaran.php")
-    Call<PesertaModel> getData(@Query("nisn") String nisn);
+    @GET("pendaftaran/{nisn}")
+    Call<PesertaModel> getDetailPendaftaran(@Path("nisn") String nisn);
+
+    @GET("pendaftaran/{no_pendaftaran}/{nama}")
+    Call<PesertaModel> getHasil(@Path("no_pendaftaran") String nisn,@Path("nama") String nama);
+
+    @GET("profile")
+    Call<ProfileModel> getProfile();
 }

@@ -11,7 +11,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".UpdatePendaftarnActivity"></activity>
+        <activity android:name=".InformasiActivity"></activity>
+        <activity
+            android:name=".ProfileActivity"
+            android:label="Profile Sekolah"
+            android:parentActivityName=".HomeActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".CekHasilActivity"
+            android:label="Cek Hasil Seleksi"
+            android:parentActivityName=".HomeActivity"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".UpdatePendaftarnActivity" />
         <activity
             android:name=".DataPendaftaranActivity"
             android:label="Data Pendaftaran"
@@ -35,7 +46,8 @@
             android:name=".TutorialActivity"
             android:label="@string/title_activity_tutorial"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".HomeActivity" />
+        <activity android:name=".HomeActivity"
+            android:theme="@style/AppTheme"/>
         <activity android:name=".RegisterActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".SplashscreenActivity">

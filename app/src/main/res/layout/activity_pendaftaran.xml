@@ -4,30 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_gradient"
+    android:background="@mipmap/bg"
     tools:context=".PendaftaranActivity">
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-    <android.support.v7.widget.CardView
-        android:layout_margin="@dimen/activity_horizontal_margin"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    <RelativeLayout
-        android:padding="@dimen/activity_horizontal_margin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
-            android:text="FORM PENDAFTARAN"
-            android:layout_centerInParent="true"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </RelativeLayout>
-    </android.support.v7.widget.CardView>
-
     <android.support.v7.widget.CardView
         android:layout_margin="@dimen/activity_horizontal_margin"
         android:layout_width="match_parent"
@@ -55,6 +37,8 @@
             <EditText
                 android:id="@+id/nama"
                 android:hint="NAMA LENGKAP"
+                android:imeOptions="actionNext"
+                android:inputType="text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
             <TextView
@@ -65,6 +49,8 @@
             <EditText
             android:id="@+id/tmpLahir"
             android:hint="TEMPAT LAHIR"
+                android:inputType="text"
+                android:imeOptions="actionNext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
             <TextView
@@ -74,7 +60,9 @@
                 android:layout_height="wrap_content" />
             <EditText
                 android:id="@+id/tglLahir"
+                android:imeOptions="actionNext"
                 android:hint="TANGGAL LAHIR (yyyy-mm-dd)"
+                android:inputType="date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
             <TextView
@@ -104,6 +92,8 @@
             <EditText
                 android:id="@+id/alamat"
                 android:hint="ALAMAT"
+                android:imeOptions="actionNext"
+                android:inputType="text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
             <TextView
@@ -125,6 +115,8 @@
             <EditText
                 android:id="@+id/sekolahasal"
                 android:hint="SEKOLAH ASAL"
+                android:inputType="text"
+                android:imeOptions="actionNext"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
             <TextView
@@ -201,6 +193,8 @@
             <EditText
                 android:id="@+id/nmayah"
                 android:hint="NAMA AYAH"
+                android:inputType="text"
+                android:imeOptions="actionNext"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
             <TextView
@@ -211,6 +205,8 @@
             <EditText
                 android:id="@+id/nmibu"
                 android:hint="NAMA IBU"
+                android:inputType="text"
+                android:imeOptions="actionNext"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
             <TextView
@@ -222,18 +218,23 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
                 <RadioButton
-                    android:id="@+id/rbRpl"
-                    android:text="Rekayasa Perangkat Lunak"
+                    android:id="@+id/rbTaudio"
+                    android:text="@string/teknik_audio_video_elektonika"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
                 <RadioButton
-                    android:id="@+id/rbTkj"
-                    android:text="Teknik Komputer"
+                    android:id="@+id/rbTOK"
+                    android:text="@string/teknik_otomotif_kendaraan_ringan"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
                 <RadioButton
-                    android:id="@+id/rbMm"
-                    android:text="Multimedia"
+                    android:id="@+id/rbTOS"
+                    android:text="@string/teknik_otomotif_sepeda_motor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <RadioButton
+                    android:id="@+id/rbMm_"
+                    android:text="@string/multimedia_komputer"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
             </RadioGroup>
@@ -250,7 +251,7 @@
                <Button
                    android:id="@+id/BtnDaftar"
                    android:text="DAFTAR"
-                   android:background="@drawable/background_gradient"
+                   android:background="@color/colorPrimary"
                    android:textColor="@color/colorWhite"
                    android:layout_width="match_parent"
                    android:layout_height="wrap_content" />

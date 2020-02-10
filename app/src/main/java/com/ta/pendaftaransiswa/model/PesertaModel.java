@@ -1,11 +1,12 @@
 package com.ta.pendaftaransiswa.model;
 
 public class PesertaModel {
+    private String no_pendaftaran;
     private String nama;
     private String nisn;
     private String tmp_lahir;
     private String tgl_lahir;
-    private String sekolah_asal;
+    private String asal_sekolah;
     private String alamat;
     private String jk;
     private String n_mtk;
@@ -14,39 +15,37 @@ public class PesertaModel {
     private String avg;
     private String tahun_lulus;
     private String telepon;
-
-
-
     private String nm_ayah;
     private String nm_ibu;
     private String program ;
     private String error;
+    private String message;
+    private int status;
+    private String keterangan;
 
     public PesertaModel() {
     }
 
-    public PesertaModel(String nama, String nisn, String sekolah_asal) {
+    public PesertaModel(String nama, String nisn, String asal_sekolah) {
         this.nama = nama;
         this.nisn = nisn;
-        this.sekolah_asal = sekolah_asal;
+        this.asal_sekolah = asal_sekolah;
     }
 
-    public PesertaModel(String nama, String nisn, String tmp_lahir, String tgl_lahir, String sekolah_asal, String alamat, String jk, String n_mtk, String n_bindo, String n_bing, String avg, String tahun_lulus, String nm_ayah, String nm_ibu, String program) {
-        this.nama = nama;
-        this.nisn = nisn;
-        this.tmp_lahir = tmp_lahir;
-        this.tgl_lahir = tgl_lahir;
-        this.sekolah_asal = sekolah_asal;
-        this.alamat = alamat;
-        this.jk = jk;
-        this.n_mtk = n_mtk;
-        this.n_bindo = n_bindo;
-        this.n_bing = n_bing;
-        this.avg = avg;
-        this.tahun_lulus = tahun_lulus;
-        this.nm_ayah = nm_ayah;
-        this.nm_ibu = nm_ibu;
-        this.program = program;
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public String getNo_pendaftaran() {
+        return no_pendaftaran;
+    }
+
+    public void setNo_pendaftaran(String no_pendaftaran) {
+        this.no_pendaftaran = no_pendaftaran;
     }
 
     public String getNama() {
@@ -65,14 +64,6 @@ public class PesertaModel {
         this.nisn = nisn;
     }
 
-    public String getSekolah_asal() {
-        return sekolah_asal;
-    }
-
-    public void setSekolah_asal(String sekolah_asal) {
-        this.sekolah_asal = sekolah_asal;
-    }
-
     public String getTmp_lahir() {
         return tmp_lahir;
     }
@@ -89,12 +80,12 @@ public class PesertaModel {
         this.tgl_lahir = tgl_lahir;
     }
 
-    public String getsekolah_asal() {
-        return sekolah_asal;
+    public String getasal_sekolah() {
+        return asal_sekolah;
     }
 
-    public void setsekolah_asal(String sekolah_asal) {
-        this.sekolah_asal = sekolah_asal;
+    public void setasal_sekolah(String asal_sekolah) {
+        this.asal_sekolah = asal_sekolah;
     }
 
     public String getAlamat() {
@@ -184,6 +175,31 @@ public class PesertaModel {
     public void setTelepon(String telepon) {
         this.telepon = telepon;
     }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public String getAsal_sekolah() {
+        return asal_sekolah;
+    }
+
+    public void setAsal_sekolah(String asal_sekolah) {
+        this.asal_sekolah = asal_sekolah;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
+    public String getKeterangan() {
+        return keterangan;
+    }
+
+    public void setKeterangan(String keterangan) {
+        this.keterangan = keterangan;
+    }
+
     public String getError() {
         return error;
     }
